@@ -1,20 +1,22 @@
-import { characterCardInterface } from "../../interfaces";
+import { CharacteArray } from "../../App";
+// import { Character } from "../../data";
 import "./CharacterCards.css";
 
-export const CharacterCards = ({
-  name,
-  nickName,
-  imgUrl,
-  desc,
-}: characterCardInterface) => {
+export const CharacterCards = ({ data }: CharacteArray) => {
   return (
-    <div className="card" key={name}>
-      <div className="card-titles">
-        <h3>{name}</h3>
-        <h4>{nickName}</h4>
-      </div>
-      <img src={imgUrl} alt="" />
-      <p>{desc}</p>
-    </div>
+    <section id="character-cards">
+      {data.map((character) => {
+        return (
+          <div className="card" key={character.name}>
+            <div className="card-titles">
+              <h3>{character.name}</h3>
+              <h4>{character.nickName}</h4>
+            </div>
+            <img src={character.altImageUrl} alt="" />
+            <p>{character.background}</p>
+          </div>
+        );
+      })}
+    </section>
   );
 };
