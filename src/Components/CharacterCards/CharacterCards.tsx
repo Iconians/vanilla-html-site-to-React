@@ -3,9 +3,10 @@ import { CharacteArray } from "../../App";
 import "./CharacterCards.css";
 
 export const CharacterCards = ({ data }: CharacteArray) => {
+  const sortedCharacters = data.sort((a, b) => a.name.localeCompare(b.name));
   return (
     <section id="character-cards">
-      {data.map((character) => {
+      {sortedCharacters.map((character) => {
         return (
           <div className="card" key={character.name}>
             <div className="card-titles">

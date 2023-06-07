@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./TopCharacterRow.css";
 import { CharacteArray } from "../../App";
+import { topCharCatergories } from "../../data";
 
 export class TopCharacterRow extends React.Component<CharacteArray> {
   render() {
@@ -13,9 +14,9 @@ export class TopCharacterRow extends React.Component<CharacteArray> {
           <table>
             <tbody>
               <tr>
-                <th>Name</th>
-                <th>Skillset</th>
-                <th>Votes</th>
+                {topCharCatergories.map((category) => {
+                  return <th key={category}>{category}</th>;
+                })}
               </tr>
               {sortedCharacters.map((character, index) => {
                 if (index < 5) {

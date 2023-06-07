@@ -129,3 +129,5 @@ export const listItemData = [
     li: "support us",
   },
 ];
+
+export const topCharCatergories = ["Name", "Skillset", "Votes"];
